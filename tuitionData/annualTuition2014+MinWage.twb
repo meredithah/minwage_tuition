@@ -1,0 +1,1027 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<workbook source-platform='mac' version='8.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <!-- build 8300.15.0219.2230                                -->
+  <preferences>
+  </preferences>
+  <datasources>
+    <datasource caption='Workbook1' inline='true' name='excel-direct.42120.515508726900' version='8.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' filename='/Users/ellenvanwyk/Desktop/Workbook1.xlsx'>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='Sheet1 (Workbook1)' inline='true' name='excel-direct.42120.516190208300' version='8.3'>
+      <connection class='excel-direct' cleaning='no' compat='no' filename='/Users/ellenvanwyk/Desktop/Workbook1.xlsx'>
+        <relation name='Sheet1$' table='[Sheet1$]' type='table'>
+          <columns header='yes'>
+            <column datatype='integer' name='Sector' ordinal='0' />
+            <column datatype='real' name='Public Two-Year National' ordinal='1' />
+            <column datatype='real' name='Public Four-Year National' ordinal='2' />
+            <column datatype='real' name='Private Nonprofit Four-Year National' ordinal='3' />
+            <column datatype='real' name='Public Two-Year Middle States' ordinal='4' />
+            <column datatype='real' name='Public Four-Year Middle States' ordinal='5' />
+            <column datatype='real' name='Private Nonprofit Four-Year Middle States' ordinal='6' />
+            <column datatype='real' name='Public Two-Year Midwest' ordinal='7' />
+            <column datatype='real' name='Public Four-Year Midwest' ordinal='8' />
+            <column datatype='real' name='Private Nonprofit Four-Year Midwest' ordinal='9' />
+            <column datatype='real' name='Public Two-Year New England' ordinal='10' />
+            <column datatype='real' name='Public Four-Year New England' ordinal='11' />
+            <column datatype='real' name='Private Nonprofit Four-Year New England' ordinal='12' />
+            <column datatype='real' name='Public Two-Year South' ordinal='13' />
+            <column datatype='real' name='Public Four-Year South' ordinal='14' />
+            <column datatype='real' name='Private Nonprofit Four-Year South' ordinal='15' />
+            <column datatype='real' name='Public Two-Year Southwest' ordinal='16' />
+            <column datatype='real' name='Public Four-Year Southwest' ordinal='17' />
+            <column datatype='real' name='Private Nonprofit Four-Year Southwest' ordinal='18' />
+            <column datatype='real' name='Public Two-Year West' ordinal='19' />
+            <column datatype='real' name='Public Four-Year West' ordinal='20' />
+            <column datatype='real' name='Private Nonprofit Four-Year West' ordinal='21' />
+            <column datatype='real' name='Minimum Wage' ordinal='22' />
+            <column datatype='real' name='Minimum wage in 2014' ordinal='23' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Sector</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sector]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Sector</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Two-Year National</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Two-Year National]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Two-Year National</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Four-Year National</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Four-Year National]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Four-Year National</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Private Nonprofit Four-Year National</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Private Nonprofit Four-Year National]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Private Nonprofit Four-Year National</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Two-Year Middle States</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Two-Year Middle States]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Two-Year Middle States</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Four-Year Middle States</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Four-Year Middle States]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Four-Year Middle States</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Private Nonprofit Four-Year Middle States</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Private Nonprofit Four-Year Middle States]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Private Nonprofit Four-Year Middle States</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Two-Year Midwest</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Two-Year Midwest]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Two-Year Midwest</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Four-Year Midwest</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Four-Year Midwest]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Four-Year Midwest</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Private Nonprofit Four-Year Midwest</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Private Nonprofit Four-Year Midwest]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Private Nonprofit Four-Year Midwest</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Two-Year New England</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Two-Year New England]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Two-Year New England</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Four-Year New England</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Four-Year New England]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Four-Year New England</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Private Nonprofit Four-Year New England</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Private Nonprofit Four-Year New England]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Private Nonprofit Four-Year New England</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Two-Year South</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Two-Year South]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Two-Year South</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Four-Year South</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Four-Year South]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Four-Year South</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Private Nonprofit Four-Year South</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Private Nonprofit Four-Year South]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Private Nonprofit Four-Year South</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Two-Year Southwest</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Two-Year Southwest]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Two-Year Southwest</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Four-Year Southwest</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Four-Year Southwest]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Four-Year Southwest</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Private Nonprofit Four-Year Southwest</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Private Nonprofit Four-Year Southwest]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Private Nonprofit Four-Year Southwest</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Two-Year West</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Two-Year West]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Two-Year West</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Public Four-Year West</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Public Four-Year West]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Public Four-Year West</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Private Nonprofit Four-Year West</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Private Nonprofit Four-Year West]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Private Nonprofit Four-Year West</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Minimum Wage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Minimum Wage]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Minimum Wage</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Minimum wage in 2014</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Minimum wage in 2014]</local-name>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias>Minimum wage in 2014</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name></remote-name>
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1$]</parent-name>
+            <remote-alias></remote-alias>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Annual Salary, 40 hour work week (-15% tax)' datatype='real' name='[Calculation_6750426122648533]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Minimum wage in 2014] * 2080 * (.85)' scope-isolation='false' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='real' name='[Private Nonprofit Four-Year Middle States]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Private Nonprofit Four-Year Midwest]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Private Nonprofit Four-Year National]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Private Nonprofit Four-Year New England]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Private Nonprofit Four-Year South]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Private Nonprofit Four-Year Southwest]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Private Nonprofit Four-Year West]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Public Four-Year Middle States]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Public Four-Year Midwest]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Public Four-Year National]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Public Four-Year New England]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Public Four-Year South]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Public Four-Year Southwest]' role='measure' type='quantitative'>
+      </column>
+      <column datatype='real' name='[Public Four-Year West]' role='measure' type='quantitative'>
+      </column>
+      <column-instance column='[Calculation_6750426122648533]' derivation='Attribute' name='[attr:Calculation_6750426122648533:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Private Nonprofit Four-Year Middle States]' derivation='Sum' name='[sum:Private Nonprofit Four-Year Middle States:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Private Nonprofit Four-Year Midwest]' derivation='Sum' name='[sum:Private Nonprofit Four-Year Midwest:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Private Nonprofit Four-Year National]' derivation='Sum' name='[sum:Private Nonprofit Four-Year National:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Private Nonprofit Four-Year New England]' derivation='Sum' name='[sum:Private Nonprofit Four-Year New England:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Private Nonprofit Four-Year South]' derivation='Sum' name='[sum:Private Nonprofit Four-Year South:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Private Nonprofit Four-Year Southwest]' derivation='Sum' name='[sum:Private Nonprofit Four-Year Southwest:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Private Nonprofit Four-Year West]' derivation='Sum' name='[sum:Private Nonprofit Four-Year West:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Public Four-Year Middle States]' derivation='Sum' name='[sum:Public Four-Year Middle States:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Public Four-Year Midwest]' derivation='Sum' name='[sum:Public Four-Year Midwest:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Public Four-Year National]' derivation='Sum' name='[sum:Public Four-Year National:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Public Four-Year New England]' derivation='Sum' name='[sum:Public Four-Year New England:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Public Four-Year South]' derivation='Sum' name='[sum:Public Four-Year South:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Public Four-Year Southwest]' derivation='Sum' name='[sum:Public Four-Year Southwest:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Public Four-Year West]' derivation='Sum' name='[sum:Public Four-Year West:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.5' measure-ordering='alphabetic' measure-percentage='0.4' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#17becf'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year National:qk]&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Middle States:qk]&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Midwest:qk]&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Southwest:qk]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year West:qk]&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year New England:qk]&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Midwest:qk]&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year National:qk]&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Middle States:qk]&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year South:qk]&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year West:qk]&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year New England:qk]&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Southwest:qk]&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year South:qk]&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;[excel-direct.42120.516190208300].[attr:Calculation_6750426122648533:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (Workbook1)' name='excel-direct.42120.516190208300' />
+          </datasources>
+          <datasource-dependencies datasource='excel-direct.42120.516190208300'>
+            <column caption='Annual Salary, 40 hour work week (-15% tax)' datatype='real' name='[Calculation_6750426122648533]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Minimum wage in 2014] * 2080 * (.85)' scope-isolation='false' />
+            </column>
+            <column datatype='real' name='[Private Nonprofit Four-Year Middle States]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Private Nonprofit Four-Year Midwest]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Private Nonprofit Four-Year National]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Private Nonprofit Four-Year New England]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Private Nonprofit Four-Year South]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Private Nonprofit Four-Year Southwest]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Private Nonprofit Four-Year West]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Public Four-Year Middle States]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Public Four-Year Midwest]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Public Four-Year National]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Public Four-Year New England]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Public Four-Year South]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Public Four-Year Southwest]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='real' name='[Public Four-Year West]' role='measure' type='quantitative'>
+            </column>
+            <column datatype='integer' name='[Sector]' role='measure' type='quantitative'>
+            </column>
+            <column-instance column='[Calculation_6750426122648533]' derivation='Attribute' name='[attr:Calculation_6750426122648533:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sector]' derivation='None' name='[none:Sector:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_6750426122648533]' derivation='Sum' name='[sum:Calculation_6750426122648533:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Private Nonprofit Four-Year Middle States]' derivation='Sum' name='[sum:Private Nonprofit Four-Year Middle States:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Private Nonprofit Four-Year Midwest]' derivation='Sum' name='[sum:Private Nonprofit Four-Year Midwest:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Private Nonprofit Four-Year National]' derivation='Sum' name='[sum:Private Nonprofit Four-Year National:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Private Nonprofit Four-Year New England]' derivation='Sum' name='[sum:Private Nonprofit Four-Year New England:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Private Nonprofit Four-Year South]' derivation='Sum' name='[sum:Private Nonprofit Four-Year South:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Private Nonprofit Four-Year Southwest]' derivation='Sum' name='[sum:Private Nonprofit Four-Year Southwest:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Private Nonprofit Four-Year West]' derivation='Sum' name='[sum:Private Nonprofit Four-Year West:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Public Four-Year Middle States]' derivation='Sum' name='[sum:Public Four-Year Middle States:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Public Four-Year Midwest]' derivation='Sum' name='[sum:Public Four-Year Midwest:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Public Four-Year National]' derivation='Sum' name='[sum:Public Four-Year National:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Public Four-Year New England]' derivation='Sum' name='[sum:Public Four-Year New England:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Public Four-Year South]' derivation='Sum' name='[sum:Public Four-Year South:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Public Four-Year Southwest]' derivation='Sum' name='[sum:Public Four-Year Southwest:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Public Four-Year West]' derivation='Sum' name='[sum:Public Four-Year West:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[excel-direct.42120.516190208300].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Middle States:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Midwest:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year National:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year New England:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year South:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Southwest:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year West:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Middle States:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Midwest:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year National:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year New England:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year South:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Southwest:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year West:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[excel-direct.42120.516190208300].[attr:Calculation_6750426122648533:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <sort class='manual' column='[excel-direct.42120.516190208300].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Middle States:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Midwest:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year National:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year New England:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year South:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year Southwest:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year West:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Middle States:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Midwest:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year National:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year New England:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year South:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year Southwest:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Public Four-Year West:qk]&quot;</bucket>
+              <bucket>&quot;[excel-direct.42120.516190208300].[sum:Calculation_6750426122648533:qk]&quot;</bucket>
+            </dictionary>
+          </sort>
+          <slices>
+            <column>[excel-direct.42120.516190208300].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+        </style>
+        <panes>
+          <pane>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[excel-direct.42120.516190208300].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[excel-direct.42120.516190208300].[Multiple Values]</rows>
+        <cols>[excel-direct.42120.516190208300].[none:Sector:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows>
+    <window class='schema' source-height='-1' />
+    <window auto-hidden='0' class='worksheet' maximized='1' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+            <card pane-specification-id='0' param='[excel-direct.42120.516190208300].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='31'>
+            <card type='columns' />
+          </strip>
+          <strip size='31'>
+            <card type='rows' />
+          </strip>
+        </edge>
+      </cards>
+      <highlight>
+        <color-one-way>
+          <field>[excel-direct.42120.516190208300].[:Measure Names]</field>
+        </color-one-way>
+      </highlight>
+      <selection-collection>
+        <tuple-selection>
+          <tuple-reference>
+            <tuple-descriptor>
+              <pane-descriptor>
+                <x-fields>
+                  <field>[excel-direct.42120.516190208300].[none:Sector:qk]</field>
+                </x-fields>
+                <y-fields>
+                  <field>[excel-direct.42120.516190208300].[Multiple Values]</field>
+                </y-fields>
+              </pane-descriptor>
+              <columns>
+                <field>[excel-direct.42120.516190208300].[none:Sector:qk]</field>
+                <field>[excel-direct.42120.516190208300].[:Measure Names]</field>
+                <field>[excel-direct.42120.516190208300].[Multiple Values]</field>
+              </columns>
+            </tuple-descriptor>
+            <tuple>
+              <value>1993</value>
+              <value>&quot;[excel-direct.42120.516190208300].[sum:Private Nonprofit Four-Year South:qk]&quot;</value>
+              <value>15715.590373961219</value>
+            </tuple>
+          </tuple-reference>
+        </tuple-selection>
+      </selection-collection>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
