@@ -31,7 +31,7 @@ and open the template in the editor.
     <body>
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script>
-        
+ 
         var width = 900,
         height = 550;    
         margin = 30;
@@ -107,7 +107,93 @@ and open the template in the editor.
         });
         
         d3.select(self.frameElement).style("height", height + "px");
-            
+        
         </script>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+ 
+
+
+        <script>
+
+
+        function printCalculation(){
+            var output = document.createElement("div");
+
+            //Get user inputs
+            loan_amount = document.getElementById('loan_amount').value;
+            interest_rate = document.getElementById('interest_rate').value;
+            payoff_period = document.getElementById('payoff_period').value * 12;
+            weekly_hours_worked = document.getElementById('weekly_hours_worked').value;
+
+            
+            //calcualte loan payment based on this formula https://www.easycalculation.com/formulas/education-loan-repayment.html (used by the new york times)
+            var emi = ((loan_amount * (interest_rate/1200) * Math.pow((1 + interest_rate/1200),  payoff_period)) / (Math.pow((1 + interest_rate/1200), payoff_period) - 1))
+            var total_repayment = emi * payoff_period
+            var monthly_payment = total_repayment/ (payoff_period)
+            console.log(monthly_payment)
+
+            output.textContent = monthly_payment;
+
+            //use profession input to get correct wage from json file
+            $.getJSON("professions.json", function(professions) {
+                console.log(professions); // this will show the info it in firebug console
+                position = document.getElementById('position').value
+                console.log(professions[position])
+
+                monthly_wages = professions[position].wage * weekly_hours_worked * 4.333
+
+                money_after_loan = monthly_wages - monthly_payment
+
+                output.textContent = money_after_loan;
+            });
+
+            document.body.appendChild(output);
+        }
+
+
+        </script>
+        <form action="">
+            <select id = "position">
+                 <option value="management">Management</option>
+                 <option value="business_finops">Business and Financial Operations</option>
+                 <option value="computer_math">Computer and Mathematical</option>
+                 <option value="arch_eng">Architecture and Engineering</option>
+                 <option value="life_science">Life, Physical, and Social Science</option>
+                 <option value="community_service">Community and Social Services</option>
+                 <option value="legal">Legal</option>
+                 <option value="educ_train_lib">Education, Training, and Library</option>
+                 <option value="art_entertainment_design">Business and Financial Operations</option>
+                 <option value="healthcare_pract">Healthcare Practitioner and Technical</option>
+                 <option value="healthcare_support">Healthcare Support"</option>
+                 <option value="protective">Protective Service</option>
+                 <option value="food_prep">Food Preparation and Serving</option>
+                 <option value="maintenance">Building and Grounds Cleaning and Maintenance</option>
+                 <option value="personal_care">Personal Care and Services</option>
+                 <option value="sales">Sales and Related</option>
+                 <option value="office_admin">Office and Administrative Support</option>
+                 <option value="farm_fish_forest">Farming, Fishing, and Forestry</option>
+                 <option value="construction">Construction and Extraction</option>
+                 <option value="nstall_maint">Installation, Maintenance and Repair</option>
+                 <option value="production">Production</option>
+                 <option value="transportation">Transportation and Material Moving</option>
+        </select></br>
+        Loan Amount:<br>
+            <input type="text" id="loan_amount">
+        <br>
+        Interest Rate:<br>
+            <input type="text" id="interest_rate">
+        <br>
+        Payoff period:<br>
+            <input type="text" id="payoff_period">
+        <br>
+        Weekly Hours Worked:<br>
+            <input type="text" id="weekly_hours_worked">
+        <br>
+        <input type="submit" value="Submit" onclick="printCalculation();return false;">
+        </form>
+
     </body>
+
+
 </html>

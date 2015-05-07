@@ -1,0 +1,90 @@
+{
+	"management":{
+    "title": "Management",
+    "wage": "54.54"
+},
+"business_finops":{
+    "title": "Business and Financial Operations",
+    "wage": "34.75"
+},
+"computer_math":{
+    "title": "Computer and Mathematical",
+    "wage": "43.77"
+},
+"arch_eng":{
+    "title": "Architecture and Engineering",
+    "wage": "43.91"
+},
+"life_science":{
+    "title": "Life, Physical, and Social Science",
+    "wage": "35.25"
+},
+"community_service":{
+    "title": "Community and Social Services",
+    "wage": "23.79"
+},
+"legal":{
+    "title": "Legal",
+    "wage": "50.83"
+},
+"educ_train_lib":{
+    "title": "Education, Training, and Library",
+    "wage": "27.10"
+},
+"art_entertainment_design":{
+    "title": "Business and Financial Operations",
+    "wage": "34.75"
+},
+"healthcare_pract":{
+    "title": "Healthcare Practitioner and Technical",
+    "wage": "38.96"
+},
+"healthcare_support":{
+    "title": "Healthcare Support",
+    "wage": "14.18"
+},
+"protective":{
+    "title": "Protective_Service",
+    "wage": "34.75"
+},
+"food_prep":{
+    "title": "Food Preparation and Serving",
+    "wage": "9.99"
+},
+"maintenance":{
+    "title": "Building and Grounds Cleaning and Maintenance",
+    "wage": "12.49"
+},
+"personal_care":{
+    "title": "Personal Care and Services",
+    "wage": "11.60"
+},
+"sales":{
+    "title": "Sales and Related",
+    "wage": "13.93"
+},
+"office_admin":{
+    "title": "Office and Administrative Support",
+    "wage": "17.92"
+},
+"farm_fish_forest":{
+    "title": "Farming, Fishing, and Forestry",
+    "wage": "9.73"
+},
+"construction":{
+    "title": "Construction and Extraction",
+    "wage": "25.35"
+},
+"install_maint":{
+    "title": "Installation, Maintenance and Repair",
+    "wage": "23.28"
+},
+"production":{
+    "title": "Production",
+    "wage": "34.75"
+},
+"transportation":{
+    "title": "Transportation and Material Moving",
+    "wage": "14.90"
+}
+}
