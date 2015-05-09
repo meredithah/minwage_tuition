@@ -29,7 +29,7 @@
 .q6-9,
 .q7-9,
 .q8-9 {
-  stroke: white;
+  stroke: #606060 ;
   stroke-width: .5px;
 }
 div.tooltip {
@@ -45,15 +45,15 @@ div.tooltip {
   pointer-events: none;
 }
 
-.q0-9 { fill:rgb(247,251,255); }
-.q1-9 { fill:rgb(222,235,247); }
-.q2-9 { fill:rgb(198,219,239); }
-.q3-9 { fill:rgb(158,202,225); }
-.q4-9 { fill:rgb(107,174,214); }
-.q5-9 { fill:rgb(66,146,198); }
-.q6-9 { fill:rgb(33,113,181); }
-.q7-9 { fill:rgb(8,81,156); }
-.q8-9 { fill:rgb(8,48,107); }
+.q0-9 { fill:#FF5050; }
+.q1-9 { fill:#FF7373; }
+.q2-9 { fill:#FFA8A8; }
+.q3-9 { fill:#FFDCDC; }
+.q4-9 { fill:#FFFFFF; }
+.q5-9 { fill:#B2F0D1; }
+.q6-9 { fill:#80E6B2; }
+.q7-9 { fill:#33D685; }
+.q8-9 { fill:#00CC66; }
 
 </style>
 <body>
@@ -92,6 +92,7 @@ function printCalculation(){
 
         //calculate money leftover after loan payment
         monthly_wages = professions_json[position].wage * weekly_hours_worked * 4.333
+        console.log('wages ' + monthly_wages)
         money_after_loan = monthly_wages - monthly_payment
 
 
@@ -99,15 +100,15 @@ function printCalculation(){
           family_size = document.getElementById('family_size').value
           myjson = family_size_json
           for (i = 0; i < 9; i++ ){
-            //console.log(counties[i]);
-            //console.log(family_size_json[counties[i]].salary[family_size]);
             monthly_expenses = family_size_json[counties[i]].salary[family_size]
+            console.log('expenses ' + monthly_expenses);
             money_final = money_after_loan - monthly_expenses
-            updateData(counties[i], 10000/money_final);
+            console.log('final ' + money_final)
+            updateData(counties[i], money_final/10000);
           };
         });
 
-        output.textContent = "Money after Loan: $" + Math.round(money_after_loan * 100) / 100;
+        output.textContent = "Money at end of month: $" + Math.round(money_final * 100) / 100;
 
     });
 
@@ -119,8 +120,8 @@ function printCalculation(){
 
 <script>
 
-var width = 960,
-    height = 600;
+var width = 640,
+    height = 540;
 
 var rateById = d3.map();
 
@@ -130,7 +131,7 @@ var quantize = d3.scale.quantize()
 
 var projection = d3.geo.mercator()
       .scale(6000 * 2)
-      .center([-122, 38])
+      .center([-122.7, 37.9])
       .translate([width/2, height/2]);
 
 var path = d3.geo.path()
@@ -141,11 +142,15 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 
+
+
+
 var sfBaySVG;
 
 queue()
     .defer(d3.json, "caCountiesTopo.json")
     .defer(d3.tsv, "caUnemployment.tsv", function(d) { rateById.set(d.id, +d.rate); })
+
     .await(ready);
 
 var div = d3.select("body").append("div")
@@ -153,6 +158,11 @@ var div = d3.select("body").append("div")
   .style("opacity", 0);
 
 function drawSVG(mapSVG) {
+  //Append 'water' rectangle    
+  svg.append("rect")
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("fill", "#E0E0EB");
   svg.append("g")
       .attr("class", "counties")
     .selectAll("path")
@@ -160,11 +170,13 @@ function drawSVG(mapSVG) {
     .enter().append("path")
       .attr("class", function(d) { return quantize(rateById.get(d.id)); })
       .attr("d", path);
+
 }
 
 function ready(error, caCountiesTopo) {
   sfBaySVG = caCountiesTopo;
   drawSVG(sfBaySVG);
+
 }
 
 function updateData(county, value) {
