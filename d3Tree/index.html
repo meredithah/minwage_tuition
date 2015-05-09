@@ -137,15 +137,16 @@ and open the template in the editor.
 
             //use profession input to get correct wage from json file
             $.getJSON("professions.json", function(professions) {
-                console.log(professions); // this will show the info it in firebug console
+                console.log(professions);
                 position = document.getElementById('position').value
                 console.log(professions[position])
 
+                //calculate money leftover after loan payment
                 monthly_wages = professions[position].wage * weekly_hours_worked * 4.333
 
                 money_after_loan = monthly_wages - monthly_payment
 
-                output.textContent = money_after_loan;
+                output.textContent = "Money after Loan: $" + Math.round(money_after_loan * 100) / 100;
             });
 
             document.body.appendChild(output);
