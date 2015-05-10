@@ -8,27 +8,40 @@
 }
 
 
-.q0-9:hover,
-.q1-9:hover,
-.q2-9:hover,
-.q3-9:hover,
-.q4-9:hover,
-.q5-9:hover,
-.q6-9:hover,
-.q7-9:hover,
-.q8-9:hover {
+
+.q0-15:hover,
+.q1-15:hover,
+.q2-15:hover,
+.q3-15:hover,
+.q4-15:hover,
+.q5-15:hover,
+.q6-15:hover,
+.q7-15:hover,
+.q8-15:hover,
+.q9-15:hover,
+.q10-15:hover,
+.q11-15:hover,
+.q12-15:hover,
+.q13-15:hover,
+.q14-15:hover{
   opacity: 0.7;
 }
 
-.q0-9,
-.q1-9,
-.q2-9,
-.q3-9,
-.q4-9,
-.q5-9,
-.q6-9,
-.q7-9,
-.q8-9 {
+.q0-15, 
+.q1-15,
+.q2-15,
+.q3-15,
+.q4-15,
+.q5-15,
+.q6-15,
+.q7-15,
+.q8-15,
+.q9-15,
+.q10-15,
+.q11-15,
+.q12-15,
+.q13-15,
+.q14-15{
   stroke: #606060 ;
   stroke-width: .5px;
 }
@@ -45,15 +58,21 @@ div.tooltip {
   pointer-events: none;
 }
 
-.q0-9 { fill:#FF5050; }
-.q1-9 { fill:#FF7373; }
-.q2-9 { fill:#FFA8A8; }
-.q3-9 { fill:#FFDCDC; }
-.q4-9 { fill:#FFFFFF; }
-.q5-9 { fill:#B2F0D1; }
-.q6-9 { fill:#80E6B2; }
-.q7-9 { fill:#33D685; }
-.q8-9 { fill:#00CC66; }
+.q0-15 { fill:#FF5050; }
+.q1-15 { fill:#FF7373; }
+.q2-15 { fill:#FFA8A8; }
+.q3-15 { fill:#FFDCDC; }
+.q4-15 { fill:#FFFFFF; }
+.q5-15 { fill:#B2F0D1; }
+.q6-15 { fill:#80E6B2; }
+.q7-15 { fill:#33D685; }
+.q8-15 { fill:#00CC66; }
+.q9-15 { fill:#8585E0; }
+.q10-15 { fill:#5C5CD6; }
+.q11-15 { fill:#3333CC; }
+.q12-15 { fill:#2929A3; }
+.q13-15 { fill:#1F1F7A; }
+.q14-15 { fill:#141452; }
 
 </style>
 <body>
@@ -79,7 +98,11 @@ function printCalculation(){
     //calcualte loan payment based on this formula https://www.easycalculation.com/formulas/education-loan-repayment.html (used by the new york times)
     var emi = ((loan_amount * (interest_rate/1200) * Math.pow((1 + interest_rate/1200),  payoff_period)) / (Math.pow((1 + interest_rate/1200), payoff_period) - 1))
     var total_repayment = emi * payoff_period
-    var monthly_payment = total_repayment/ (payoff_period)
+    if (payoff_period > 0) {
+      var monthly_payment = total_repayment/ (payoff_period)
+    } else {
+      monthly_payment = 0;
+    }
     console.log(monthly_payment)
 
     output.textContent = monthly_payment;
@@ -92,15 +115,17 @@ function printCalculation(){
 
         //calculate money leftover after loan payment
         monthly_wages = professions_json[position].wage * weekly_hours_worked * 4.333
+        console.log('monthly_wages ' + monthly_wages);
         console.log('wages ' + monthly_wages)
         money_after_loan = monthly_wages - monthly_payment
-
+        console.log('monthly_payment ' + monthly_payment);
 
         $.getJSON("monthlySalaryByCounty.json", function(family_size_json) {
           family_size = document.getElementById('family_size').value
           myjson = family_size_json
           for (i = 0; i < 9; i++ ){
             monthly_expenses = family_size_json[counties[i]].salary[family_size]
+            console.log('money_after_loan ' + money_after_loan);
             console.log('expenses ' + monthly_expenses);
             money_final = money_after_loan - monthly_expenses
             console.log('final ' + money_final)
@@ -127,7 +152,7 @@ var rateById = d3.map();
 
 var quantize = d3.scale.quantize()
     .domain([0, .15])
-    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
+    .range(d3.range(15).map(function(i) { return "q" + i + "-15"; }));
 
 var projection = d3.geo.mercator()
       .scale(6000 * 2)
