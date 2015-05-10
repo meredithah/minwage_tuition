@@ -58,24 +58,78 @@ div.tooltip {
   pointer-events: none;
 }
 
-.q0-15 { fill:#FF5050; }
-.q1-15 { fill:#FF7373; }
-.q2-15 { fill:#FFA8A8; }
-.q3-15 { fill:#FFDCDC; }
-.q4-15 { fill:#FFFFFF; }
-.q5-15 { fill:#B2F0D1; }
-.q6-15 { fill:#80E6B2; }
-.q7-15 { fill:#33D685; }
-.q8-15 { fill:#00CC66; }
-.q9-15 { fill:#8585E0; }
-.q10-15 { fill:#5C5CD6; }
-.q11-15 { fill:#3333CC; }
-.q12-15 { fill:#2929A3; }
-.q13-15 { fill:#1F1F7A; }
-.q14-15 { fill:#141452; }
+.q0-15 { fill:#e0524a; }
+.q1-15 { fill:#e4695b; }
+.q2-15 { fill:#e77d6b; }
+.q3-15 { fill:#ed9682; }
+.q4-15 { fill:#f1ad9a; }
+.q5-15 { fill:#f6c8b7; }
+.q6-15 { fill:#f6c9b8; }
+.q7-15 { fill:#ffffff; }
+.q8-15 { fill:#d4e4d0; }
+.q9-15 { fill:#b7d1b3; }
+.q10-15 { fill:#96bf98; }
+.q11-15 { fill:#7aaf82; }
+.q12-15 { fill:#5fa26e; }
+.q13-15 { fill:#42975c; }
+.q14-15 { fill:#1a8e4f; }
 
 </style>
 <body>
+
+      <div id = "map">
+        <form action="">
+          <label for="position">Position:</label>
+            <select id = "position">
+                 <option value="management">Management</option>
+                 <option value="business_finops">Business and Financial Operations</option>
+                 <option value="computer_math">Computer and Mathematical</option>
+                 <option value="arch_eng">Architecture and Engineering</option>
+                 <option value="life_science">Life, Physical, and Social Science</option>
+                 <option value="community_service">Community and Social Services</option>
+                 <option value="legal">Legal</option>
+                 <option value="educ_train_lib">Education, Training, and Library</option>
+                 <option value="art_entertainment_design">Business and Financial Operations</option>
+                 <option value="healthcare_pract">Healthcare Practitioner and Technical</option>
+                 <option value="healthcare_support">Healthcare Support"</option>
+                 <option value="protective">Protective Service</option>
+                 <option value="food_prep">Food Preparation and Serving</option>
+                 <option value="maintenance">Building and Grounds Cleaning and Maintenance</option>
+                 <option value="personal_care">Personal Care and Services</option>
+                 <option value="sales">Sales and Related</option>
+                 <option value="office_admin">Office and Administrative Support</option>
+                 <option value="farm_fish_forest">Farming, Fishing, and Forestry</option>
+                 <option value="construction">Construction and Extraction</option>
+                 <option value="nstall_maint">Installation, Maintenance and Repair</option>
+                 <option value="production">Production</option>
+                 <option value="transportation">Transportation and Material Moving</option>
+        </select><br><br>
+        <label for="loan_amount">Loan Amount:</label>
+            <input type="text" id="loan_amount" value="17000">
+        <br><br>
+        <label for="interest_rate">Interest Rate:</label>
+            <input type="text" id="interest_rate" value="6">
+        <br><br>
+        <label for="payoff_period">Payoff Period:</label>
+            <input type="text" id="payoff_period" value="10">
+        <br><br>
+            <label for="weekly_hours_worked">Weekly Hours worked:</label>
+            <input type="range"  name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100" onchange="showValue(this.value)">
+            <span id="weekly_hours_worked_label">40</span><br><br>
+          <label for="familz_size">Family Size:</label>
+          <select id = "family_size">
+            <option value="0">1 Adult</option>
+            <option value="1">1 Adult, 1 Child</option>
+            <option value="2">1 Adult, 2 Children</option>
+            <option value="3">1 Adult, 3 Children</option>
+            <option value="4">2 Adults</option>
+            <option value="5">2 Adults, 1 Child</option>
+            <option value="6">2 Aduls, 2 Children</option>
+            <option value="7">2 Adults, 3 Children</option>
+          </select></br><br>
+        <input type="submit" value="Submit" onclick="printCalculation();return false;">
+        </form>
+
 <script src="d3.v3.min.js"></script>
 <script src="queue.v1.min.js"></script>
 <script src="topojson.v1.min.js"></script>
@@ -109,27 +163,24 @@ function printCalculation(){
 
     //use profession input to get correct wage from json file
     $.getJSON("professions.json", function(professions_json) {
-        console.log(professions_json);
         position = document.getElementById('position').value
-        console.log(professions_json[position])
 
         //calculate money leftover after loan payment
         monthly_wages = professions_json[position].wage * weekly_hours_worked * 4.333
-        console.log('monthly_wages ' + monthly_wages);
-        console.log('wages ' + monthly_wages)
         money_after_loan = monthly_wages - monthly_payment
-        console.log('monthly_payment ' + monthly_payment);
 
+        //Load living wage amount by family size json
         $.getJSON("monthlySalaryByCounty.json", function(family_size_json) {
+          
+          //Get family size
           family_size = document.getElementById('family_size').value
-          myjson = family_size_json
+
+          //Loop through all 9 counties and calculate money left over after loans, cost of living, and wages
           for (i = 0; i < 9; i++ ){
             monthly_expenses = family_size_json[counties[i]].salary[family_size]
-            console.log('money_after_loan ' + money_after_loan);
-            console.log('expenses ' + monthly_expenses);
             money_final = money_after_loan - monthly_expenses
-            console.log('final ' + money_final)
             updateData(counties[i], money_final/10000);
+            console.log(money_final/10000);
           };
         });
 
@@ -137,9 +188,16 @@ function printCalculation(){
 
     });
 
-    document.body.appendChild(output);
+    //document.body.appendChild(output);
     //updateData();
 }
+
+function showValue(newValue)
+
+{
+  document.getElementById("weekly_hours_worked_label").innerHTML=newValue;
+};
+
 </script>
 
 
@@ -151,7 +209,7 @@ var width = 640,
 var rateById = d3.map();
 
 var quantize = d3.scale.quantize()
-    .domain([0, .15])
+    .domain([-.2, .2])
     .range(d3.range(15).map(function(i) { return "q" + i + "-15"; }));
 
 var projection = d3.geo.mercator()
@@ -176,9 +234,10 @@ queue()
     .defer(d3.json, "caCountiesTopo.json")
     .defer(d3.tsv, "caUnemployment.tsv", function(d) { rateById.set(d.id, +d.rate); })
 
+
     .await(ready);
 
-var div = d3.select("body").append("div")
+var div = d3.select("#map").append("div")
   .attr("class", "tooltip")
   .style("opacity", 0);
 
@@ -188,6 +247,12 @@ function drawSVG(mapSVG) {
     .attr("width", "100%")
     .attr("height", "100%")
     .attr("fill", "#E0E0EB");
+  svg.append("svg:image")
+    .attr('x',10)
+     .attr('y',160)
+     .attr('width', 200)
+     .attr('height', 400)
+     .attr("xlink:href","legend.png")
   svg.append("g")
       .attr("class", "counties")
     .selectAll("path")
@@ -214,56 +279,5 @@ d3.select(self.frameElement).style("height", height + "px");
 
 </script>
 
-        <form action="">
-          <p>Position</p>
-            <select id = "position">
-                 <option value="management">Management</option>
-                 <option value="business_finops">Business and Financial Operations</option>
-                 <option value="computer_math">Computer and Mathematical</option>
-                 <option value="arch_eng">Architecture and Engineering</option>
-                 <option value="life_science">Life, Physical, and Social Science</option>
-                 <option value="community_service">Community and Social Services</option>
-                 <option value="legal">Legal</option>
-                 <option value="educ_train_lib">Education, Training, and Library</option>
-                 <option value="art_entertainment_design">Business and Financial Operations</option>
-                 <option value="healthcare_pract">Healthcare Practitioner and Technical</option>
-                 <option value="healthcare_support">Healthcare Support"</option>
-                 <option value="protective">Protective Service</option>
-                 <option value="food_prep">Food Preparation and Serving</option>
-                 <option value="maintenance">Building and Grounds Cleaning and Maintenance</option>
-                 <option value="personal_care">Personal Care and Services</option>
-                 <option value="sales">Sales and Related</option>
-                 <option value="office_admin">Office and Administrative Support</option>
-                 <option value="farm_fish_forest">Farming, Fishing, and Forestry</option>
-                 <option value="construction">Construction and Extraction</option>
-                 <option value="nstall_maint">Installation, Maintenance and Repair</option>
-                 <option value="production">Production</option>
-                 <option value="transportation">Transportation and Material Moving</option>
-        </select></br>
-        Loan Amount:<br>
-            <input type="text" id="loan_amount">
-        <br>
-        Interest Rate:<br>
-            <input type="text" id="interest_rate">
-        <br>
-        Payoff period:<br>
-            <input type="text" id="payoff_period">
-        <br>
-        Weekly Hours Worked:<br>
-            <input type="text" id="weekly_hours_worked">
-        <br>
-          <p>Family Size</p>
-          <select id = "family_size">
-            <option value="0">1 Adult</option>
-            <option value="1">1 Adult, 1 Child</option>
-            <option value="2">1 Adult, 2 Children</option>
-            <option value="3">1 Adult, 3 Children</option>
-            <option value="4">2 Adults</option>
-            <option value="5">2 Adults, 1 Child</option>
-            <option value="6">2 Aduls, 2 Children</option>
-            <option value="7">2 Adults, 3 Children</option>
-          </select></br><br>
-        <input type="submit" value="Submit" onclick="printCalculation();return false;">
-        </form>
 
 </body>

@@ -111,9 +111,6 @@ and open the template in the editor.
         </script>
 
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
- 
-
-
         <script>
 
 
@@ -151,9 +148,16 @@ and open the template in the editor.
 
             document.body.appendChild(output);
         }
+        function updateData(county, value) {
+          rateById.set(county, value)
+          svg.selectAll("*").remove();
+          drawSVG(sfBaySVG);
+        }
 
 
         </script>
+
+        
         <form action="">
             <select id = "position">
                  <option value="management">Management</option>
@@ -188,9 +192,9 @@ and open the template in the editor.
         Payoff period:<br>
             <input type="text" id="payoff_period">
         <br>
-        Weekly Hours Worked:<br>
-            <input type="text" id="weekly_hours_worked">
-        <br>
+        <label for="weekly_hours_worked">Weekly Hours worked:</label>
+            <input type="range"  name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100" onchange="showValue(this.value)">
+        <span id="weekly_hours_worked_label">40</span>
         <input type="submit" value="Submit" onclick="printCalculation();return false;">
         </form>
 
