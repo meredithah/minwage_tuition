@@ -273,6 +273,32 @@ a:focus {
     -o-background-size: cover;
 }
 
+.circle
+{
+width:250px;
+height:250px;
+border-radius:50%;
+font-size:75px;
+font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+color:#fff;
+line-height:250px;
+text-align:center;
+background:#F29202;
+margin-left: auto;
+margin-right: auto;
+margin-top: 25px;
+margin-bottom: 25px;
+}
+
+.schoolemphasis {
+    font-weight: bold;
+}
+
+.regemphasis {
+    font-weight: bold;
+    font-size: 30px;
+}
+
 .counties {
   fill: none;
 }
