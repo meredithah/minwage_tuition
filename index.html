@@ -3,28 +3,28 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-	<title>Minimum Wage and Tuition</title>
+  <title>Education, Debt, and Affordability in the Bay Area</title>
 
-	<!-- Bootstrap Core CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom CSS -->
-	<link href="css/grayscale.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="css/grayscale.css" rel="stylesheet">
 
-	<!-- Custom Fonts -->
-	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <!-- Custom Fonts -->
+  <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -33,162 +33,431 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-					<i class="fa fa-bars"></i>
-				</button>
-				<a class="navbar-brand page-scroll" href="#page-top">
-					<i class="fa fa-play-circle"></i> Final Project
-				</a>
-			</div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">
+          <i class="fa fa-play-circle"></i> Final Project
+        </a>
+      </div>
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-				<ul class="nav navbar-nav">
-					<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-					<li class="hidden">
-						<a href="#page-top"></a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#federalaid">Federal Aid</a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#debt">Debt and Earnings</a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#calculator">Cost of Living Calculator</a>
-					</li>
-					<li>
-						<a class="page-scroll" href="#conclusion">Conclusion</a>
-					</li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-		</div>
-		<!-- /.container -->
-	</nav>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#introduction">Intro</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#federalaid">Federal Aid</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#debt">Debt and Earnings</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#calculator">Affordability Calculator</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
 
-	<!-- Intro Header -->
-	<header class="intro">
-		<div class="intro-body">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2">
-						<h1 class="brand-heading">The Cost of Education</h1>
-						<p class="intro-text">The affordability of college in Bay Area</p>
-						<a href="#introduction" class="btn btn-circle page-scroll">
-							<i class="fa fa-angle-double-down animated"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+  <!-- Intro Header -->
+  <header class="intro">
+    <div class="intro-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h1 class="brand-heading">Education, Debt, and Affordability in the Bay Area</h1>
+            <p class="intro-text">A look at the long-term cost of education in Bay Area</p>
+            <a href="#introduction" class="btn btn-circle page-scroll">
+              <i class="fa fa-angle-double-down animated"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-	<!-- Introduction -->
-	<section id="introduction" class="content-section text-center">
-		<div class="container">
-			<div class="col-lg-6">
-				<h2>Introduction</h2>
-				<p>San Francisco’s Bay Area is a study in contrasts, where technology companies and world-class universities mingle—often uncomfortably—with lower-income communities. And although the state of California and four Bay Area cities—Berkeley, Oakland, San Jose, and San Francisco—have minimum wages higher than the national wage, even they do not always meet families’ expenses. In such an expensive part of the world, how valuable an investment is education, and will graduates be able to pay off their loans?</p>
-				</div>
-				<div class="col-lg-6">
-				<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 600px; height: 400px;'><noscript><a href='#'><img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;co&#47;county_minimum_wage&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='600' height='400' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='county_minimum_wage&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;co&#47;county_minimum_wage&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div></div>
-			</div>
-		</div>
-	</section>
+  <!-- Introduction -->
+  <section id="introduction" class="content-section text-center">
+    <div class="image-section">
+      <div class="container">
+        <div class="col-lg-5">
+          <h2>Introduction</h2>
+          <p>San Francisco’s Bay Area is a study in contrasts, where technology companies and world-class universities mingle—often uncomfortably—with lower-income communities. And although the state of California and four Bay Area cities—Berkeley, Oakland, San Jose, and San Francisco—have minimum wages higher than the national wage, even they do not always meet families’ expenses. In such an expensive part of the world, how valuable an investment is education, and will graduates be able to pay off their loans?</p>
+        </div>
+        <div class="col-lg-7">
+          <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+          <div class='tableauPlaceholder' style='width: 625px; height: 450px;'>
+            <noscript>
+              <a href='#'>
+                <img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;co&#47;county_minimum_wage&#47;Sheet1&#47;1_rss.png' style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz' width='625' height='450' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='site_root' value='' />
+              <param name='name' value='county_minimum_wage&#47;Sheet1' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;co&#47;county_minimum_wage&#47;Sheet1&#47;1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='showVizHome' value='no' />
+              <param name='showTabs' value='y' />
+              <param name='bootstrapWhenNotified' value='true' />
+            </object>
+          </div>
+        </div>
+      </div>
+      <div>
+      </div>
+  </section>
 
-	<!-- Infographic 1 -->
-	<section id="federalaid" class="container content-section text-center">
-		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1">
-				<h2>Federal Aid Awarded at Bay Area Schools</h2>
-				<p>We selected a representative sample of Bay Area schools to examine. They represent both public and private colleges of varying sizes and from all four areas of the Bay. The first chart below shows the change in the number of people receiving federal student aid over time, adjusted for the size of the undergraduate population. The second chart shows the unadjusted number of students receiving federal aid.</p>
-				<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 869px;'><noscript><a href='#'><img alt='FAFSA Awarded to Selected Bay Area Schools ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FA&#47;FAFSA_BayArea&#47;FAFSAAwardedtoSelectedBayAreaSchools&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='869' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='FAFSA_BayArea&#47;FAFSAAwardedtoSelectedBayAreaSchools' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FA&#47;FAFSA_BayArea&#47;FAFSAAwardedtoSelectedBayAreaSchools&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
-			</div>
-		</div>
-	</section>
+  <!-- Infographic 1 -->
+  <section id="federalaid" class="container content-section text-center">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1">
+        <h2>Federal Aid Awarded at Bay Area Schools</h2>
+        <p>We selected a representative sample of Bay Area schools to examine. They represent both public and private colleges of varying sizes and from all four areas of the Bay. The first chart below shows the change in the number of people receiving federal student aid over time, adjusted for the size of the undergraduate population. The second chart shows the unadjusted number of students receiving federal aid.</p>
+        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+        <div class='tableauPlaceholder' style='width: 1004px; height: 869px;'>
+          <noscript>
+            <a href='#'>
+              <img alt='FAFSA Awarded to Selected Bay Area Schools ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FA&#47;FAFSA_BayArea&#47;FAFSAAwardedtoSelectedBayAreaSchools&#47;1_rss.png' style='border: none' />
+            </a>
+          </noscript>
+          <object class='tableauViz' width='1004' height='869' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='site_root' value='' />
+            <param name='name' value='FAFSA_BayArea&#47;FAFSAAwardedtoSelectedBayAreaSchools' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;FA&#47;FAFSA_BayArea&#47;FAFSAAwardedtoSelectedBayAreaSchools&#47;1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='showVizHome' value='no' />
+            <param name='showTabs' value='y' />
+            <param name='bootstrapWhenNotified' value='true' />
+          </object>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- Infographic 2 -->
-	<section id="debt" class="content-section text-center">
-		<div class="image-section">
-			<div class="container">
-				<div class="col-lg-10 col-lg-offset-1">
-					<h2>Debt and Degrees</h2>
-					<p>The first chart below shows the average cumulative debt of students who borrowed money to finance their educations at selected Bay Area universities.  The second chart illustrates the number of students they graduate in various majors.  Red bars indicate majors whose associated professions typically do not pay enough to support one adult and one child in the county where the university is located. </p>
-					<script type='text/javascript'
-						src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div
-						class='tableauPlaceholder' style='width: 1004px; height:
-						869px;'><noscript><a href='#'><img alt='Average Debt and Earning Power
-						' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ZZ&#47;ZZRCGG9C6&#47;1_rss.png'
-						style='border: none' /></a></noscript><object class='tableauViz'
-						width='1004' height='869' style='display:none; margin-right: 300px;'><param name='host_url'
-						value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='path'
-						value='shared&#47;ZZRCGG9C6' /> <param name='toolbar' value='yes'
-						/><param name='static_image'
-						value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ZZ&#47;ZZRCGG9C6&#47;1.png'
-						/> <param name='animate_transition' value='yes' /><param
-						name='display_static_image' value='yes' /><param
-						name='display_spinner' value='yes' /><param name='display_overlay'
-						value='yes' /><param name='display_count' value='yes' /><param
-						name='showVizHome' value='no' /><param name='showTabs' value='y'
-						/><param name='bootstrapWhenNotified' value='true' /></object></div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <!-- Infographic 2 -->
+  <section id="debt" class="content-section text-center">
+    <div class="image-section">
+      <div class="container">
+        <div class="col-lg-10 col-lg-offset-1">
+          <h2>Debt and Degrees</h2>
+          <p>The first chart below shows the average cumulative debt of students who borrowed money to finance their educations at selected Bay Area universities. The second chart illustrates the number of students they graduate in various majors. Red bars indicate majors whose associated professions typically do not pay enough to support one adult and one child in the county where the university is located.</p>
+          <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+          <div class='tableauPlaceholder' style='width: 1004px; height:
+869px;'>
+            <noscript>
+              <a href='#'>
+                <img alt='Average Debt and Earning Power
+' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;de&#47;debt_and_earnings_by_major&#47;AverageDebtandEarningPower&#47;1_rss.png' style='border: none' />
+              </a>
+            </noscript>
+            <object class='tableauViz' width='1004' height='869' style='display:none;'>
+              <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+              <param name='site_root' value='' />
+              <param name='name' value='debt_and_earnings_by_major&#47;AverageDebtandEarningPower' />
+              <param name='tabs' value='no' />
+              <param name='toolbar' value='yes' />
+              <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;de&#47;debt_and_earnings_by_major&#47;AverageDebtandEarningPower&#47;1.png' />
+              <param name='animate_transition' value='yes' />
+              <param name='display_static_image' value='yes' />
+              <param name='display_spinner' value='yes' />
+              <param name='display_overlay' value='yes' />
+              <param name='display_count' value='yes' />
+              <param name='showVizHome' value='no' />
+              <param name='showTabs' value='y' />
+              <param name='bootstrapWhenNotified' value='true' />
+            </object>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- Infographic 3 -->
-		<section id="calculator" class="container content-section text-center">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<h2>Cost of Living Calculator</h2>
-				<p>Line graph with the price of tuition over time.</p>
-				 <button type="button">Click Me!</button> 
-			</div>
-		</div>
-	</section>
+  <!-- Infographic 3 -->
+  <section id="calculator" class="container content-section text-center">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Affordability Calculator</h2>
+        <p>There are multiple dimensions that affect affordability, including average wage for profession, terms and amount of the student loan, weekly hours worked, family sizes, and location. Explore how these variables interact below.</p>
+        <div id="map">
+          <form class="form-inline" action="">
+            <label for="position">Position:</label>
+            <select id="position">
+              <option value="arch_eng">Architecture and Engineering</option>
+              <option value="art_entertainment_design">Art, Entertainment, and Design</option>
+              <option value="maintenance">Building and Grounds Cleaning and Maintenance</option>
+              <option value="business_finops">Business and Financial Operations</option>
+              <option value="community_service">Community and Social Services</option>
+              <option value="computer_math">Computer and Mathematical</option>
+              <option value="construction">Construction and Extraction</option>
+              <option value="educ_train_lib">Education, Training, and Library</option>
+              <option value="farm_fish_forest">Farming, Fishing, and Forestry</option>
+              <option value="food_prep">Food Preparation and Serving</option>
+              <option value="nstall_maint">Installation, Maintenance and Repair</option>
+              <option value="healthcare_pract">Healthcare Practitioner and Technical</option>
+              <option value="healthcare_support">Healthcare Support"</option>
+              <option value="legal">Legal</option>
+              <option value="life_science">Life, Physical, and Social Science</option>
+              <option value="management">Management</option>
+              <option value="office_admin">Office and Administrative Support</option>
+              <option value="personal_care">Personal Care and Services</option>
+              <option value="production">Production</option>
+              <option value="protective">Protective Service</option>
+              <option value="sales">Sales and Related</option>
+              <option value="transportation">Transportation and Material Moving</option>
+            </select>
+            <br>
+            <br>
+            <label for="loan_amount">Loan Amount:</label>
+            <input type="text" class="form-control" id="loan_amount" value="17000">
+            <br>
+            <br>
+            <label for="interest_rate">Interest Rate:</label>
+            <input type="text" class="form-control" id="interest_rate" value="6">
+            <br>
+            <br>
+            <label for="payoff_period">Payoff Period:</label>
+            <input type="text" class="form-control" id="payoff_period" value="10">
+            <br>
+            <br>
+            <label for="weekly_hours_worked">Weekly Hours worked:</label>
+            <input type="range" name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100" onchange="showValue(this.value)">
+            <span id="weekly_hours_worked_label">40</span>
+            <br>
+            <br>
+            <label for="familz_size">Family Size:</label>
+            <select id="family_size">
+              <option value="0">1 Adult</option>
+              <option value="1">1 Adult, 1 Child</option>
+              <option value="2">1 Adult, 2 Children</option>
+              <option value="3">1 Adult, 3 Children</option>
+              <option value="4">2 Adults</option>
+              <option value="5">2 Adults, 1 Child</option>
+              <option value="6">2 Adults, 2 Children</option>
+              <option value="7">2 Adults, 3 Children</option>
+            </select>
+            </br>
+            <br>
+            <input type="submit" class="btn btn-default btn-md" value="Submit" onclick="printCalculation();return false;">
+            <p></p>
+          </form>
 
-	<!-- Credits -->
-	<section id="credits" class="container content-section text-center">
-			<div class="col-lg-8 col-lg-offset-2">
-				<h2>Credits</h2>
-				<p>This website was created by Meredith Hitchcock, Jordan Shedlock, and Ellen Jane van Wyk as the final project for Information Visualization and Presentation, a course at the UC Berkeley School of Information.</p>
+          <script src="d3.v3.min.js"></script>
+          <script src="queue.v1.min.js"></script>
+          <script src="topojson.v1.min.js"></script>
 
-				<p>The visualizations were created with Tableau and D3, and are based on data from the Common Data Sets provided by the colleges and universities, FAFSA, a loan calculator website, and the MIT Living Wage Calculator. The website was designed using a one-page HTML theme created by Start Bootstrap.</p>
+          <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+          <script>
+            var family_size_json
+            var myjson
 
-				<p>See project code on GitHub.
-				</p>
+            function printCalculation() {
+              var counties = ["06097", "06001", "06055", "06095", "06013", "06085", "06081", "06075", "06041"];
+              var output = document.createElement("div");
 
-			</div>
-	</section>
+              //Get user inputs
+              loan_amount = document.getElementById('loan_amount').value;
+              interest_rate = document.getElementById('interest_rate').value;
+              payoff_period = document.getElementById('payoff_period').value * 12;
+              weekly_hours_worked = document.getElementById('weekly_hours_worked').value;
 
-	<!-- Footer -->
-	<footer>
-		<div class="container text-center">
-			<p>Information Visualization and Presentation, Spring 2015
-			<br />School of Information
-				<br />University of California, Berkeley</p>
-		</div>
-	</footer>
 
-	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+              //calcualte loan payment based on this formula https://www.easycalculation.com/formulas/education-loan-repayment.html (used by the new york times)
+              var emi = ((loan_amount * (interest_rate / 1200) * Math.pow((1 + interest_rate / 1200), payoff_period)) / (Math.pow((1 + interest_rate / 1200), payoff_period) - 1))
+              var total_repayment = emi * payoff_period
+              if (payoff_period > 0) {
+                var monthly_payment = total_repayment / (payoff_period)
+              } else {
+                monthly_payment = 0;
+              }
+              console.log(monthly_payment)
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
+              output.textContent = monthly_payment;
 
-	<!-- Plugin JavaScript -->
-	<script src="js/jquery.easing.min.js"></script>
+              //use profession input to get correct wage from json file
+              $.getJSON("professions.json", function (professions_json) {
+                position = document.getElementById('position').value
 
-	<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+                //calculate money leftover after loan payment
+                monthly_wages = professions_json[position].wage * weekly_hours_worked * 4.333
+                money_after_loan = monthly_wages - monthly_payment
 
-	<!-- Custom Theme JavaScript -->
-	<script src="js/grayscale.js"></script>
+                //Load living wage amount by family size json
+                $.getJSON("monthlySalaryByCounty.json", function (family_size_json) {
+
+                  //Get family size
+                  family_size = document.getElementById('family_size').value
+
+                  //Loop through all 9 counties and calculate money left over after loans, cost of living, and wages
+                  for (i = 0; i < 9; i++) {
+                    monthly_expenses = family_size_json[counties[i]].salary[family_size]
+                    money_final = money_after_loan - monthly_expenses
+                    updateData(counties[i], money_final / 10000);
+                    console.log(money_final / 10000);
+                  };
+                });
+
+                output.textContent = "Money at end of month: $" + Math.round(money_final * 100) / 100;
+
+              });
+
+              //document.body.appendChild(output);
+              //updateData();
+            }
+
+            function showValue(newValue)
+
+             {
+              document.getElementById("weekly_hours_worked_label").innerHTML = newValue;
+            };
+          </script>
+
+
+          <script>
+            var width = 640,
+              height = 540;
+
+            var rateById = d3.map();
+
+            var quantize = d3.scale.quantize()
+              .domain([-.2, .2])
+              .range(d3.range(15).map(function (i) {
+                return "q" + i + "-15";
+              }));
+
+            var projection = d3.geo.mercator()
+              .scale(6000 * 2)
+              .center([-122.7, 37.9])
+              .translate([width / 2, height / 2]);
+
+            var path = d3.geo.path()
+              .projection(projection);
+
+            var svg = d3.select("body").append("svg")
+              .attr("width", width)
+              .attr("height", height);
+
+
+
+
+
+            var sfBaySVG;
+
+            queue()
+              .defer(d3.json, "caCountiesTopo.json")
+              .defer(d3.tsv, "caUnemployment.tsv", function (d) {
+                rateById.set(d.id, +d.rate);
+              })
+
+
+            .await(ready);
+
+            var div = d3.select("#map").append("div")
+              .attr("class", "tooltip")
+              .style("opacity", 0);
+
+            function drawSVG(mapSVG) {
+              //Append 'water' rectangle    
+              svg.append("rect")
+                .attr("width", "100%")
+                .attr("height", "100%")
+                .attr("fill", "#E0E0EB");
+              svg.append("svg:image")
+                .attr('x', 10)
+                .attr('y', 160)
+                .attr('width', 200)
+                .attr('height', 400)
+                .attr("xlink:href", "legend.png")
+              svg.append("g")
+                .attr("class", "counties")
+                .selectAll("path")
+                .data(topojson.feature(mapSVG, mapSVG.objects.subunits).features)
+                .enter().append("path")
+                .attr("class", function (d) {
+                  return quantize(rateById.get(d.id));
+                })
+                .attr("d", path);
+
+            }
+
+            function ready(error, caCountiesTopo) {
+              sfBaySVG = caCountiesTopo;
+              drawSVG(sfBaySVG);
+
+            }
+
+            function updateData(county, value) {
+              rateById.set(county, value)
+              svg.selectAll("*").remove();
+              drawSVG(sfBaySVG);
+            }
+
+            d3.select(self.frameElement).style("height", height + "px");
+          </script>
+        </div>
+      </div>
+  </section>
+
+  <!-- Credits -->
+  <section id="credits" class="container content-section text-center">
+    <div class="col-lg-8 col-lg-offset-2">
+      <h2>Credits</h2>
+      <p>This website was created by Meredith Hitchcock, Jordan Shedlock, and Ellen Jane van Wyk as the final project for Information Visualization and Presentation, a course at the UC Berkeley School of Information.</p>
+
+      <p>The visualizations were created with Tableau and D3, and are based on data from the Common Data Sets provided by the colleges and universities, FAFSA, a loan calculator website, and the MIT Living Wage Calculator. The website was designed using a one-page HTML theme created by Start Bootstrap.</p>
+
+      <p>See project code on GitHub.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p>Information Visualization and Presentation, Spring 2015
+        <br />School of Information
+        <br />University of California, Berkeley</p>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="js/grayscale.js"></script>
 
 </body>
 

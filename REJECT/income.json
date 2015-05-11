@@ -1,0 +1,25 @@
+{
+	"name": "Family Type",
+	"children": [
+		{
+			"name": "One Adult",
+			"children": [
+				{"name": "No Children", "Living_Wage": "12.39", "Poverty_Wage": "5.61"},
+				{"name": "One Child", "Living_Wage": "24.99", "Poverty_Wage": "7.54"},
+				{"name": "Two Children", "Living_Wage": "28.88", "Poverty_Wage": "9.47"},
+				{"name": "Three Children", "Living_Wage": "36.25", "Poverty_Wage": "11.41"}
+			]
+			
+		},
+		{
+			"name": "Two Adults",
+			"children": [
+				{"name": "No Children", "Living_Wage": "18.71", "Poverty_Wage": "7.54"},
+				{"name": "One Child", "Living_Wage": "22.93", "Poverty_Wage": "9.47"},
+				{"name": "Two Children", "Living_Wage": "24.37", "Poverty_Wage": "11.41"},
+				{"name": "Three Children", "Living_Wage": "29.78", "Poverty_Wage": "13.35"}
+			]
+		}
+	]
+
+}	
