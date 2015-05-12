@@ -7,42 +7,43 @@
   fill: none;
 }
 
+#job{
+  float:left;
+  width:45%;
+  padding: 20px;
+  padding-bottom: 50px;
+  height:25%;
+}
+#loan{
+  float:left;
+  width: 45%;
+  padding: 20px;
+  padding-bottom: 50px;
+}
 
-
-.q0-15:hover,
-.q1-15:hover,
-.q2-15:hover,
-.q3-15:hover,
-.q4-15:hover,
-.q5-15:hover,
-.q6-15:hover,
-.q7-15:hover,
-.q8-15:hover,
-.q9-15:hover,
-.q10-15:hover,
-.q11-15:hover,
-.q12-15:hover,
-.q13-15:hover,
-.q14-15:hover{
+.q0-9:hover,
+.q1-9:hover,
+.q2-9:hover,
+.q3-9:hover,
+.q4-9:hover,
+.q5-9:hover,
+.q6-9:hover,
+.q7-9:hover,
+.q8-9:hover{
   opacity: 0.7;
 }
 
-.q0-15, 
-.q1-15,
-.q2-15,
-.q3-15,
-.q4-15,
-.q5-15,
-.q6-15,
-.q7-15,
-.q8-15,
-.q9-15,
-.q10-15,
-.q11-15,
-.q12-15,
-.q13-15,
-.q14-15{
-  stroke: #606060 ;
+.outside,
+.q0-9, 
+.q1-9,
+.q2-9,
+.q3-9,
+.q4-9,
+.q5-9,
+.q6-9,
+.q7-9,
+.q8-9{
+  stroke: #FFFFFF ;
   stroke-width: .5px;
 }
 div.tooltip {
@@ -58,21 +59,36 @@ div.tooltip {
   pointer-events: none;
 }
 
-.q0-15 { fill:#e0524a; }
-.q1-15 { fill:#e4695b; }
-.q2-15 { fill:#e77d6b; }
-.q3-15 { fill:#ed9682; }
-.q4-15 { fill:#f1ad9a; }
-.q5-15 { fill:#f6c8b7; }
-.q6-15 { fill:#f6c9b8; }
-.q7-15 { fill:#ffffff; }
-.q8-15 { fill:#d4e4d0; }
-.q9-15 { fill:#b7d1b3; }
-.q10-15 { fill:#96bf98; }
-.q11-15 { fill:#7aaf82; }
-.q12-15 { fill:#5fa26e; }
-.q13-15 { fill:#42975c; }
-.q14-15 { fill:#1a8e4f; }
+#map {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.q0-9 { fill:#CB727F; }
+.q1-9 { fill:#D28D96; }
+.q2-9 { fill:#DAA9AF; }
+.q3-9 { fill:#E2C6C9; }
+.q4-9 { fill:#DAE2E3; }
+.q5-9 { fill:#B4DCC2; }
+.q6-9 { fill:#96C99F; }
+.q7-9 { fill:#76B675; }
+.q8-9 { fill:#52A047; }
+
+
+.outside { fill: #CFCFCF}
+
+
+.tooltip{ background-color:rgba(68,136,187,0.5);;
+          margin: 10px;
+          height: 50px;
+          width: 150px;
+          padding-left: 10px; 
+          padding-top: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+        }
 
 </style>
 <body>
@@ -82,9 +98,10 @@ div.tooltip {
     <br>
 
       <div id = "map">
+        <div id = "job">
         <form action="">
           <label for="position">Position:</label>
-            <select id = "position">
+            <select id = "position" onchange = "printCalculation();" >
                  <option value="management">Management</option>
                  <option value="business_finops">Business and Financial Operations</option>
                  <option value="computer_math">Computer and Mathematical</option>
@@ -107,21 +124,13 @@ div.tooltip {
                  <option value="nstall_maint">Installation, Maintenance and Repair</option>
                  <option value="production">Production</option>
                  <option value="transportation">Transportation and Material Moving</option>
-        </select><br><br>
-        <label for="loan_amount">Loan Amount:</label>
-            <input type="text" id="loan_amount" value="17000">
-        <br><br>
-        <label for="interest_rate">Interest Rate:</label>
-            <input type="text" id="interest_rate" value="6">
-        <br><br>
-        <label for="payoff_period">Payoff Period:</label>
-            <input type="text" id="payoff_period" value="10">
+        </select>
         <br><br>
             <label for="weekly_hours_worked">Weekly Hours worked:</label>
-            <input type="range"  name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100" onchange="showValue(this.value)">
+            <input type="range"  name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100"  oninput = "printCalculation(); showValue(this.value)">
             <span id="weekly_hours_worked_label">40</span><br><br>
           <label for="familz_size">Family Size:</label>
-          <select id = "family_size">
+          <select id = "family_size" onchange = "printCalculation();">
             <option value="0">1 Adult</option>
             <option value="1">1 Adult, 1 Child</option>
             <option value="2">1 Adult, 2 Children</option>
@@ -130,9 +139,26 @@ div.tooltip {
             <option value="5">2 Adults, 1 Child</option>
             <option value="6">2 Aduls, 2 Children</option>
             <option value="7">2 Adults, 3 Children</option>
-          </select></br><br>
-        <input type="submit" value="Submit" onclick="printCalculation();return false;">
-        </form>
+          </select>
+        </div>
+
+        <div id = "loan">
+          <label for="loan_amount">Loan Amount:</label>
+            <input type="range"  name="loan_amount" id="loan_amount" value="17000" min="0" max="100000"  oninput = "printCalculation(); showValueLoan(this.value)">
+            <span id="loan_amount_label">17000</span>
+            <br><br>
+
+          <label for="interest_rate">Interest Rate:</label>
+            <input type="range"  name="interest_rate" id="interest_rate" value="6" min="0" max="20"  oninput = "printCalculation(); showValueIR(this.value)">
+            <span id="interest_rate_label">6</span><span>%</span>
+
+          <br><br>
+          <label for="payoff_period">Payoff Period:</label>
+              <input type="text" id="payoff_period" value="10" onchange = "printCalculation();" >
+          <br><br>
+          <input type="submit" value="Submit" onclick="printCalculation();return false;">
+          </form>
+        </div>
 
 <script src="d3.v3.min.js"></script>
 <script src="queue.v1.min.js"></script>
@@ -142,8 +168,9 @@ div.tooltip {
 <script>
 var family_size_json
 var myjson
+var counties = ["06097","06001","06055","06095","06013","06085","06081","06075","06041"];
 function printCalculation(){
-    var counties = ["06097","06001","06055","06095","06013","06085","06081","06075","06041"];
+    
     var output = document.createElement("div");
 
     //Get user inputs
@@ -187,6 +214,8 @@ function printCalculation(){
             console.log(money_final/10000);
           };
         });
+        svg.selectAll("*").remove();
+        drawSVG(sfBaySVG);
 
         output.textContent = "Money at end of month: $" + Math.round(money_final * 100) / 100;
 
@@ -196,11 +225,11 @@ function printCalculation(){
     //updateData();
 }
 
-function showValue(newValue)
+function showValueHoursWorked(newValue){document.getElementById("weekly_hours_worked_label").innerHTML=newValue;};
 
-{
-  document.getElementById("weekly_hours_worked_label").innerHTML=newValue;
-};
+function showValueLoan(newValue){document.getElementById("loan_amount_label").innerHTML=newValue;};
+
+function showValueIR(newValue){document.getElementById("interest_rate_label").innerHTML=newValue;};
 
 </script>
 
@@ -213,8 +242,8 @@ var width = 640,
 var rateById = d3.map();
 
 var quantize = d3.scale.quantize()
-    .domain([-.2, .2])
-    .range(d3.range(15).map(function(i) { return "q" + i + "-15"; }));
+    .domain([-.27, .27])
+    .range(d3.range(9).map(function(i) { return "q" + i + "-9"; }));
 
 var projection = d3.geo.mercator()
       .scale(6000 * 2)
@@ -224,25 +253,23 @@ var projection = d3.geo.mercator()
 var path = d3.geo.path()
     .projection(projection);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#map").append("svg")
     .attr("width", width)
-    .attr("height", height);
-
-
-
+    .attr("height", height)
 
 
 var sfBaySVG;
 
 queue()
     .defer(d3.json, "caCountiesTopo.json")
-    .defer(d3.tsv, "caUnemployment.tsv", function(d) { rateById.set(d.id, +d.rate); })
+    .defer(d3.tsv, "initial.tsv", function(d) { rateById.set(d.id, +d.rate); })
 
 
     .await(ready);
 
 var div = d3.select("#map").append("div")
   .attr("class", "tooltip")
+  .attr("diplay", "block")
   .style("opacity", 0);
 
 function drawSVG(mapSVG) {
@@ -250,19 +277,30 @@ function drawSVG(mapSVG) {
   svg.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
-    .attr("fill", "#E0E0EB");
-  svg.append("svg:image")
+    .attr("fill", "#f1f1f1");
+
+  //Append Legend
+  svg.append("text")
     .attr('x',10)
-     .attr('y',160)
-     .attr('width', 200)
-     .attr('height', 400)
+     .attr('y',335)
+     .attr("font-family","sans-serif")
+     .attr("fill","#3f3f3f")
+     .text("Leftover Money Monthly");
+  svg.append("svg:image")
+    .attr('x',-100)
+     .attr('y',240)
+     .attr('width', 250)
+     .attr('height', 500)
      .attr("xlink:href","legend.png")
   svg.append("g")
       .attr("class", "counties")
     .selectAll("path")
       .data(topojson.feature(mapSVG, mapSVG.objects.subunits).features)
     .enter().append("path")
-      .attr("class", function(d) { return quantize(rateById.get(d.id)); })
+      .attr("class", function(d) { 
+        if (counties.indexOf(d.id) > -1) {return quantize(rateById.get(d.id))
+        }else{
+          return "outside"}; })
       .attr("d", path);
 
 }
@@ -275,8 +313,6 @@ function ready(error, caCountiesTopo) {
 
 function updateData(county, value) {
   rateById.set(county, value)
-  svg.selectAll("*").remove();
-  drawSVG(sfBaySVG);
 }
 
 d3.select(self.frameElement).style("height", height + "px");
