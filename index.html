@@ -444,7 +444,7 @@
       <div id="loan">
         <label for="loan_amount">Loan Amount:</label>
         <input type="range" name="loan_amount" id="loan_amount" value="17000" min="0" max="100000" oninput="printCalculation(); showValueLoan(this.value)">
-        <span id="loan_amount_label">17000</span>
+        <span>$ </span><span id="loan_amount_label">17000</span>
         <br>
         <br>
 
@@ -456,7 +456,7 @@
         <br>
         <div class="form-inline">
           <label for="payoff_period">Payoff Period:</label>
-          <input type="text" id="payoff_period" class="form-control" value="10" placeholder="10" onchange="printCalculation();">
+          <input type="text" id="payoff_period" class="form-control" value="10" placeholder="10" onchange="printCalculation();"><span> years</span>
           <br>
           <br>
         </div>
