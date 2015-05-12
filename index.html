@@ -399,45 +399,45 @@
         <form action="">
           <label for="position">Position:</label>
           <select id="position" onchange="printCalculation();">
-            <option value="arch_eng">Architecture and Engineering: $43.91</option>
-            <option value="art_entertainment_design">Art, Entertainment, and Design: $34.75/hour</option>
-            <option value="business_finops">Business and Financial Operations: $34.75/hour</option>
-            <option value="maintenance">Building and Grounds Cleaning and Maintenance: $12.49/hour</option>
-            <option value="construction">Construction and Extraction: $25.35/hour</option>
-            <option value="community_service">Community and Social Services: $23.79/hour</option>
-            <option value="computer_math">Computer and Mathematical: $43.77/hour</option>
-            <option value="educ_train_lib">Education, Training, and Library: $27.10/hour</option>
-            <option value="farm_fish_forest">Farming, Fishing, and Forestry: $9.73/hour</option>
-            <option value="food_prep">Food Preparation and Serving: $9.99/hour</option>
-            <option value="healthcare_pract">Healthcare Practitioner and Technical: $38.96/hour</option>
-            <option value="healthcare_support">Healthcare Support: $14.18/hour"</option>
-            <option value="nstall_maint">Installation, Maintenance and Repair: $23.28/hour</option>
-            <option value="legal">Legal: $50.83/hour</option>
-            <option value="life_science">Life, Physical, and Social Science: $35.25/hour</option>
-            <option value="management">Management: $54.54/hour</option>
-            <option value="office_admin">Office and Administrative Support: $17.92/hour</option>
-            <option value="production">Production: $34.75/hour</option>
-            <option value="protective">Protective Service: $34.75/hour</option>
-            <option value="sales">Sales and Related: $13.93/hour</option>
-            <option value="transportation">Transportation and Material Moving: $14.90/hour</option>
+            <option value="arch_eng" id = "dropDown">Architecture and Engineering: $43.91</option>
+            <option value="art_entertainment_design" id = "dropDown">Art, Entertainment, and Design: $34.75/hour</option>
+            <option value="business_finops" id = "dropDown">Business and Financial Operations: $34.75/hour</option>
+            <option value="maintenance" id = "dropDown">Building and Grounds Cleaning and Maintenance: $12.49/hour</option>
+            <option value="construction" id = "dropDown">Construction and Extraction: $25.35/hour</option>
+            <option value="community_service" id = "dropDown">Community and Social Services: $23.79/hour</option>
+            <option value="computer_math" id = "dropDown">Computer and Mathematical: $43.77/hour</option>
+            <option value="educ_train_lib" id = "dropDown">Education, Training, and Library: $27.10/hour</option>
+            <option value="farm_fish_forest" id = "dropDown">Farming, Fishing, and Forestry: $9.73/hour</option>
+            <option value="food_prep" id = "dropDown">Food Preparation and Serving: $9.99/hour</option>
+            <option value="healthcare_pract" id = "dropDown">Healthcare Practitioner and Technical: $38.96/hour</option>
+            <option value="healthcare_support" id = "dropDown">Healthcare Support: $14.18/hour"</option>
+            <option value="nstall_maint" id = "dropDown">Installation, Maintenance and Repair: $23.28/hour</option>
+            <option value="legal" id = "dropDown">Legal: $50.83/hour</option>
+            <option value="life_science" id = "dropDown">Life, Physical, and Social Science: $35.25/hour</option>
+            <option value="management" id = "dropDown">Management: $54.54/hour</option>
+            <option value="office_admin" id = "dropDown">Office and Administrative Support: $17.92/hour</option>
+            <option value="production" id = "dropDown">Production: $34.75/hour</option>
+            <option value="protective" id = "dropDown">Protective Service: $34.75/hour</option>
+            <option value="sales" id = "dropDown">Sales and Related: $13.93/hour</option>
+            <option value="transportation" id = "dropDown">Transportation and Material Moving: $14.90/hour</option>
           </select>
           <br>
           <br>
           <label for="weekly_hours_worked">Weekly Hours worked:</label>
-          <input type="range" name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100" oninput="printCalculation(); showValue(this.value)">
+          <input type="range" name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100" oninput="printCalculation(); showValueHoursWorked(this.value)">
           <span id="weekly_hours_worked_label">40</span>
           <br>
           <br>
-          <label for="familz_size">Family Size:</label>
+          <label for="family_size">Family Size:</label>
           <select id="family_size" onchange="printCalculation();">
-            <option value="0">1 Adult</option>
-            <option value="1">1 Adult, 1 Child</option>
-            <option value="2">1 Adult, 2 Children</option>
-            <option value="3">1 Adult, 3 Children</option>
-            <option value="4">2 Adults</option>
-            <option value="5">2 Adults, 1 Child</option>
-            <option value="6">2 Aduls, 2 Children</option>
-            <option value="7">2 Adults, 3 Children</option>
+            <option value="0" id = "dropDown">1 Adult</option>
+            <option value="1" id = "dropDown">1 Adult, 1 Child</option>
+            <option value="2" id = "dropDown">1 Adult, 2 Children</option>
+            <option value="3" id = "dropDown">1 Adult, 3 Children</option>
+            <option value="4" id = "dropDown">2 Adults</option>
+            <option value="5" id = "dropDown">2 Adults, 1 Child</option>
+            <option value="6" id = "dropDown">2 Aduls, 2 Children</option>
+            <option value="7" id = "dropDown">2 Adults, 3 Children</option>
           </select>
       </div>
 
