@@ -127,7 +127,7 @@ div.tooltip {
         </select>
         <br><br>
             <label for="weekly_hours_worked">Weekly Hours worked:</label>
-            <input type="range"  name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100"  oninput = "printCalculation(); showValue(this.value)">
+            <input type="range"  name="weekly_hours_worked" id="weekly_hours_worked" value="40" min="0" max="100"  oninput = "printCalculation(); showValueHoursWorked(this.value)">
             <span id="weekly_hours_worked_label">40</span><br><br>
           <label for="familz_size">Family Size:</label>
           <select id = "family_size" onchange = "printCalculation();">
