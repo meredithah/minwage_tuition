@@ -290,8 +290,17 @@ margin-top: 25px;
 margin-bottom: 25px;
 }
 
+#circle2
+{
+    background:#70305E;
+}
+
 .schoolemphasis {
     font-weight: bold;
+    text-transform: uppercase;
+    color: #D9D900;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
 }
 
 .regemphasis {
@@ -388,12 +397,12 @@ div.tooltip {
 
 
 #credits {
-	width: 100%;
-	background-color: #000;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	-o-background-size: cover;
+    width: 100%;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 
 #introduction {
