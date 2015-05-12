@@ -163,12 +163,13 @@ div.tooltip {
 <script src="d3.v3.min.js"></script>
 <script src="queue.v1.min.js"></script>
 <script src="topojson.v1.min.js"></script>
+<script type="text/javascript" src="./tooltip.js"></script>
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
-var family_size_json
-var myjson
+
 var counties = ["06097","06001","06055","06095","06013","06085","06081","06075","06041"];
+var countiesNames = {"06097":"Sonoma","06001":"Alameda","06055":"Napa","06095":"Solano","06013":"Contra Costa","06085":"Santa Clara","06081":"San Mateo","06075":"San Francisco","06041":"Marin"};
 function printCalculation(){
     
     var output = document.createElement("div");
@@ -181,8 +182,13 @@ function printCalculation(){
 
     
     //calcualte loan payment based on this formula https://www.easycalculation.com/formulas/education-loan-repayment.html (used by the new york times)
-    var emi = ((loan_amount * (interest_rate/1200) * Math.pow((1 + interest_rate/1200),  payoff_period)) / (Math.pow((1 + interest_rate/1200), payoff_period) - 1))
-    var total_repayment = emi * payoff_period
+    if (interest_rate == 0){
+      var total_repayment = loan_amount;
+    } else {
+      var emi = ((loan_amount * (interest_rate/1200) * Math.pow((1 + interest_rate/1200),  payoff_period)) / (Math.pow((1 + interest_rate/1200), payoff_period) - 1))
+     var total_repayment = emi * payoff_period
+    };
+
     if (payoff_period > 0) {
       var monthly_payment = total_repayment/ (payoff_period)
     } else {
@@ -231,10 +237,13 @@ function showValueLoan(newValue){document.getElementById("loan_amount_label").in
 
 function showValueIR(newValue){document.getElementById("interest_rate_label").innerHTML=newValue;};
 
+
+
 </script>
 
 
 <script>
+
 
 var width = 640,
     height = 540;
@@ -284,7 +293,7 @@ function drawSVG(mapSVG) {
     .attr('x',10)
      .attr('y',335)
      .attr("font-family","sans-serif")
-     .attr("fill","#3f3f3f")
+     .attr("fill","#6D6D6D")
      .text("Leftover Money Monthly");
   svg.append("svg:image")
     .attr('x',-100)
@@ -301,7 +310,24 @@ function drawSVG(mapSVG) {
         if (counties.indexOf(d.id) > -1) {return quantize(rateById.get(d.id))
         }else{
           return "outside"}; })
-      .attr("d", path);
+      .attr("d", path)
+      .on("mouseover", function(d) {
+            var xPosition = d3.mouse(this)[0];
+            var yPosition = d3.mouse(this)[1] - 10;
+
+            svg.append("text")
+                .attr("id", "tooltip")
+                .attr("x", xPosition)
+                .attr("y", yPosition)
+                .attr("text-anchor", "middle")
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "11px")
+                .attr("fill", "#6D6D6D")
+                .text(countiesNames[d.id]);
+        })
+        .on("mouseout", function(d) {
+            d3.select("#tooltip").remove();
+        });
 
 }
 
@@ -316,6 +342,7 @@ function updateData(county, value) {
 }
 
 d3.select(self.frameElement).style("height", height + "px");
+
 
 </script>
 
