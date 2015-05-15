@@ -398,7 +398,7 @@
       <div id="job">
         <form action="">
           <label for="position">Position:</label>
-          <select id="position" onchange="printCalculation();">
+          <select id="position" onchange = "printCalculation();">
             <option value="arch_eng" id = "dropDown">Architecture and Engineering: $43.91</option>
             <option value="art_entertainment_design" id = "dropDown">Art, Entertainment, and Design: $34.75/hour</option>
             <option value="business_finops" id = "dropDown">Business and Financial Operations: $34.75/hour</option>
@@ -429,7 +429,7 @@
           <br>
           <br>
           <label for="family_size">Family Size:</label>
-          <select id="family_size" onchange="printCalculation();">
+          <select id="family_size" onchange = "printCalculation();">
             <option value="0" id = "dropDown">1 Adult</option>
             <option value="1" id = "dropDown">1 Adult, 1 Child</option>
             <option value="2" id = "dropDown">1 Adult, 2 Children</option>
@@ -483,79 +483,76 @@
           "06075": "San Francisco",
           "06041": "Marin"
         };
+        var professions_json;
+        var family_size_json;
 
-        function printCalculation() {
+            //use profession input to get correct wage from json file
+        $.getJSON("professions.json", function(professions_json_arg) {
+          professions_json = professions_json_arg;
+        });
 
-          var output = document.createElement("div");
+        $.getJSON("monthlySalaryByCounty.json", function(family_size_json_arg) {
+          family_size_json = family_size_json_arg;
+        });
 
-          //Get user inputs
-          loan_amount = document.getElementById('loan_amount').value;
-          interest_rate = document.getElementById('interest_rate').value;
-          payoff_period = document.getElementById('payoff_period').value * 12;
-          weekly_hours_worked = document.getElementById('weekly_hours_worked').value;
+        function printCalculation(){
+            
+            var output = document.createElement("div");
 
+            //Get user inputs
+            loan_amount = document.getElementById('loan_amount').value;
+            interest_rate = document.getElementById('interest_rate').value;
+            payoff_period = document.getElementById('payoff_period').value * 12;
+            weekly_hours_worked = document.getElementById('weekly_hours_worked').value;
 
-          //calcualte loan payment based on this formula https://www.easycalculation.com/formulas/education-loan-repayment.html (used by the new york times)
-          if (interest_rate == 0) {
-            var total_repayment = loan_amount;
-          } else {
-            var emi = ((loan_amount * (interest_rate / 1200) * Math.pow((1 + interest_rate / 1200), payoff_period)) / (Math.pow((1 + interest_rate / 1200), payoff_period) - 1))
-            var total_repayment = emi * payoff_period
-          };
+            
+            //calcualte loan payment based on this formula https://www.easycalculation.com/formulas/education-loan-repayment.html (used by the new york times)
+            if (interest_rate == 0){
+              var total_repayment = loan_amount;
+            } else {
+              var emi = ((loan_amount * (interest_rate/1200) * Math.pow((1 + interest_rate/1200),  payoff_period)) / (Math.pow((1 + interest_rate/1200), payoff_period) - 1))
+             var total_repayment = emi * payoff_period
+            };
 
-          if (payoff_period > 0) {
-            var monthly_payment = total_repayment / (payoff_period)
-          } else {
-            monthly_payment = 0;
-          }
-          console.log(monthly_payment)
+            if (payoff_period > 0) {
+              var monthly_payment = total_repayment/ (payoff_period)
+            } else {
+              monthly_payment = 0;
+            }
+            console.log(monthly_payment)
 
-          output.textContent = monthly_payment;
+            output.textContent = monthly_payment;
 
-          //use profession input to get correct wage from json file
-          $.getJSON("professions.json", function (professions_json) {
             position = document.getElementById('position').value
 
             //calculate money leftover after loan payment
             monthly_wages = professions_json[position].wage * weekly_hours_worked * 4.333
             money_after_loan = monthly_wages - monthly_payment
+              
+            //Get family size
+            family_size = document.getElementById('family_size').value
 
-            //Load living wage amount by family size json
-            $.getJSON("monthlySalaryByCounty.json", function (family_size_json) {
+            //Loop through all 9 counties and calculate money left over after loans, cost of living, and wages
+            for (i = 0; i < 9; i++ ){
+              monthly_expenses = family_size_json[counties[i]].salary[family_size]
+              money_final = money_after_loan - monthly_expenses
+              updateData(counties[i], money_final/10000);
+              console.log(money_final/10000);
+            };
 
-              //Get family size
-              family_size = document.getElementById('family_size').value
-
-              //Loop through all 9 counties and calculate money left over after loans, cost of living, and wages
-              for (i = 0; i < 9; i++) {
-                monthly_expenses = family_size_json[counties[i]].salary[family_size]
-                money_final = money_after_loan - monthly_expenses
-                updateData(counties[i], money_final / 10000);
-                console.log(money_final / 10000);
-              };
-            });
             svg.selectAll("*").remove();
             drawSVG(sfBaySVG);
 
             output.textContent = "Money at end of month: $" + Math.round(money_final * 100) / 100;
 
-          });
-
-          //document.body.appendChild(output);
-          //updateData();
         }
 
-        function showValueHoursWorked(newValue) {
-          document.getElementById("weekly_hours_worked_label").innerHTML = newValue;
-        };
+        function showValueHoursWorked(newValue){document.getElementById("weekly_hours_worked_label").innerHTML=newValue;};
 
-        function showValueLoan(newValue) {
-          document.getElementById("loan_amount_label").innerHTML = newValue;
-        };
+        function showValueLoan(newValue){document.getElementById("loan_amount_label").innerHTML=newValue;};
 
-        function showValueIR(newValue) {
-          document.getElementById("interest_rate_label").innerHTML = newValue;
-        };
+        function showValueIR(newValue){document.getElementById("interest_rate_label").innerHTML=newValue;};
+
       </script>
 
 
@@ -596,7 +593,6 @@
         .await(ready);
 
         var div = d3.select("#map").append("div")
-          .attr("class", "tooltip")
           .attr("diplay", "block")
           .style("opacity", 0);
 
@@ -632,6 +628,8 @@
                 return "outside"
               };
             })
+
+            //Add tooltip with county name
             .attr("d", path)
             .on("mouseover", function (d) {
               var xPosition = d3.mouse(this)[0];
